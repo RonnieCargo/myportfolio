@@ -1,0 +1,53 @@
+* {
+box-sizing: border-box;
+}
+body {
+    margin: 0;
+    background-color: #444;
+    font-family: sans-serif;
+}
+.wrapper {
+    display: grid; 
+    grid-template-columns: 150px 1fr 150px; 
+    grid-template-rows: 75px 1fr 50px; 
+    grid-template-areas: 
+    "Header Header Header"
+    "sidenav main sidebar"
+    "footer footer footer"; 
+    gap: 1px; 
+    min-height: 100vh;
+}
+
+.wrapper > * {
+    padding: 1rem;
+    background-color: linen;
+}
+
+Header { 
+grid-area: Header; 
+display: flex;
+align-items: center;}
+
+
+aside.sidenav { grid-area: sidenav; }
+main.content { grid-area: main; }
+aside.sidebar { grid-area: sidebar; }
+footer { grid-area: footer; }
+    
+/* header, footer { */
+/* grid-column: span 3;} */
+h1 {
+    margin: 0;
+}
+nav {
+    margin-left: auto;
+    /* flex-grow: 1; 
+    /* text-align: right; */
+}
+
+section, section:target ~ section:last-of-tupe {
+    display: none;
+}
+section:target, section:ast-of-type {
+    display: inherit;
+}
